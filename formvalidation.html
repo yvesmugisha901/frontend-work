@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .error {
+        color: rgb(228, 53, 53);
+      }
+      .success {
+        color: green;
+      }
+
+      #message {
+        display: none;
+      }
+
+      form {
+        background-color: rgb(206, 203, 203);
+        padding: 20px;
+        border-radius: 10px;
+        position: absolute;
+        width: 40rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      form input {
+        border-radius: 10px;
+        border: none;
+      }
+
+      form input[type="text"] {
+        width: 90%;
+        padding: 10px;
+      }
+
+      form input[type="submit"] {
+        width: 50%;
+        padding: 10px;
+        background-color: teal;
+        color: white;
+      }
+
+      form input[type="submit"]:hover {
+        background-color: rgb(3, 148, 148);
+      }
+    </style>
+  </head>
+  <body>
+    <form action="" id="form">
+      <p id="message"></p>
+      <div class="input">
+        <label for="">User name</label> <br />
+        <input type="text" name="" id="" />
+      </div>
+      <div class="input">
+        <label for="">Password</label> <br />
+        <input type="text" name="" id="" />
+      </div>
+      <br />
+      <div class="submit">
+        <input type="submit" value="Submit" />
+      </div>
+    </form>
+
+    <script>
+      const form = document.getElementById("form");
+      form.addEventListener("submit", mySubmition);
+      function mySubmition() {
+        event.preventDefault();
+        if (form[0].value == "" || form[1].value == "") {
+          message.style.display = "block";
+          message.classList.add("error");
+          message.textContent = "please Field are required";
+        } else {
+          message.style.display = "block";
+          message.classList.add("success");
+          message.textContent = "Form submited successful";
+        }
+      }
+    </script>
+  </body>
+</html>
